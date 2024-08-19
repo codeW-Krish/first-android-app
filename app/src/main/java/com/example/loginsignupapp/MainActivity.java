@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(),"Empty field...",Toast.LENGTH_LONG);
                     toast.show();
                     return;
-
                 }
 
                 Intent intent = new Intent(getApplicationContext(), IndexPage.class);
