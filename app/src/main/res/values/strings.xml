@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Login Signup App</string>
+    <string name="twitter_logo">Twitter Logo</string>
+    <string name="log_in_to_twitter">Log in to Twitter</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="log_in">Log in</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="sign_up"><![CDATA[Sign Up>]]></string>
+</resources>
