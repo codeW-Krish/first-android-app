@@ -6,44 +6,53 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".IndexPage"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#F9F3E6"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="50dp"
+            android:layout_width="60dp"
             android:layout_height="60dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
-            app:srcCompat="@mipmap/logo_round" />
+            app:srcCompat="@mipmap/logo"
+            android:contentDescription="app_logo_description"/>
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="76dp"
+            android:layout_marginStart="16dp"
             android:text="Welcome to Twitter"
-            android:layout_gravity="top"
-            android:paddingEnd="50dp"
-            android:gravity="center_horizontal"
             android:textColor="@color/black"
-            android:textSize="34sp"
-            android:textStyle="bold|italic" />
-
+            android:textSize="25sp"
+            android:textStyle="bold"/>
     </LinearLayout>
 
     <TextView
         android:id="@+id/tv_userinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:gravity="center"
-        android:layout_marginTop="50dp"
-        android:textSize="32dp"
-        android:textColor="@color/black"/>
+        android:layout_marginTop="24dp"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Edit Profile"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
 
 </LinearLayout>

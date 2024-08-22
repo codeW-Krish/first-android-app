@@ -1,6 +1,7 @@
 package com.example.loginsignupapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,10 +21,10 @@ public class IndexPage extends AppCompatActivity {
 
         tv_userinfo = (TextView) findViewById(R.id.tv_userinfo);
 
-        Bundle b = getIntent().getExtras();
-        if(b!=null){
-            String tv_name = b.getString("key_name");
-            tv_userinfo.setText("Hello, "+tv_name);
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("key_username")) {
+            String username = intent.getStringExtra("key_username");
+            tv_userinfo.setText("Hello "+username);
         }
     }
 }
