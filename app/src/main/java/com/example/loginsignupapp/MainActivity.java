@@ -10,9 +10,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(getApplicationContext(), IndexPage.class);
                         String username = DB.get_username(email);
                         intent.putExtra("key_username",username);
+                        intent.putExtra("key_email",email);
                         startActivity(intent);
                     }else{
                         showToast("Wrong Password.. Try again");

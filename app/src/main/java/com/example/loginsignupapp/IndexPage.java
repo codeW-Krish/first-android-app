@@ -3,8 +3,9 @@ package com.example.loginsignupapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
-
+import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class IndexPage extends AppCompatActivity {
 
     TextView tv_userinfo;
+    Button btn_edit_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,11 +22,15 @@ public class IndexPage extends AppCompatActivity {
         setContentView(R.layout.activity_index_page);
 
         tv_userinfo = (TextView) findViewById(R.id.tv_userinfo);
+        btn_edit_profile = (Button) findViewById(R.id.btn_edit_profile);
 
         Intent intent = getIntent();
+        String email = intent.getStringExtra("key_email");;
         if (intent != null && intent.hasExtra("key_username")) {
             String username = intent.getStringExtra("key_username");
             tv_userinfo.setText("Hello "+username);
         }
+
+
     }
 }
