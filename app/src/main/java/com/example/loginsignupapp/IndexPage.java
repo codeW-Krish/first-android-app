@@ -31,6 +31,14 @@ public class IndexPage extends AppCompatActivity {
             tv_userinfo.setText("Hello "+username);
         }
 
+        btn_edit_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Editprofile.class);
+                intent.putExtra("ep_key_email",email);
+                startActivity(intent);
+            }
+        });
 
     }
 }

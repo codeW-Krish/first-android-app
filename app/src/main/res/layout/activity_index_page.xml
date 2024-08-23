@@ -14,12 +14,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_marginTop="33dp">
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             app:srcCompat="@mipmap/logo"
@@ -32,7 +33,7 @@
             android:layout_marginStart="16dp"
             android:text="Welcome to Twitter"
             android:textColor="@color/black"
-            android:textSize="25sp"
+            android:textSize="29sp"
             android:textStyle="bold"/>
     </LinearLayout>
 
@@ -40,8 +41,10 @@
         android:id="@+id/tv_userinfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:textSize="18sp"
+        android:layout_marginTop="27dp"
+        android:textStyle="italic"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:textSize="26sp"
         android:textColor="@color/black"
         android:gravity="center"/>
 
