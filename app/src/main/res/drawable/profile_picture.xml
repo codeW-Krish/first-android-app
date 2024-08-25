@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Background color of the circle -->
+    <size android:width="120dp" android:height="120dp"/>
+    <corners android:radius="60dp"/> <!-- Radius to make it circular -->
+    <stroke
+        android:width="4dp"
+        android:color="#03A8F3"/>
+</shape>

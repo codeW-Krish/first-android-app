@@ -45,8 +45,6 @@ public class SignUpActivity extends AppCompatActivity {
                     String cof_pass = et_signup_cof_pass.getText().toString();
 
                     if(name.isEmpty() || email.isEmpty() || phone.isEmpty() || pass.isEmpty() || cof_pass.isEmpty()){
-//                    Toast toast = Toast.makeText(getApplicationContext(),"All fields are compulsory to fill...",Toast.LENGTH_LONG);
-//                    toast.show();
                         showToast("All fields are compulsory to fill...");
                         return;
                     }

@@ -156,6 +156,38 @@ public class DBhelper extends SQLiteOpenHelper {
         return username;
     }
 
+    public String get_phone_no(String email){
+        SQLiteDatabase MyDB = null;
+        String phone = null;
+        Cursor cursor = null;
+
+        try{
+            MyDB = this.getReadableDatabase();
+            String Query = "SELECT * FROM "+TABLE_NAME+" WHERE "+COLUMN_EMAIL+" = ?";
+            cursor = MyDB.rawQuery(Query,new String[] {email});
+
+            if(cursor != null && cursor.moveToFirst()){
+                int phoneColIndex = cursor.getColumnIndex(COLUMN_PHONE_NO);
+
+                if(phoneColIndex != -1){
+                    phone = cursor.getString(phoneColIndex);
+                }else{
+                    Log.e("DBhelper","No Column found "+COLUMN_PHONE_NO);
+                }
+            }
+        }catch(Exception e){
+            Log.e("Dbhelper","Error while updating the phone number");
+        }finally {
+            if(cursor!=null){
+                cursor.close();
+            }
+            if(MyDB != null){
+                MyDB.close();
+            }
+        }
+        return phone;
+    }
+
     public boolean update_password(String phone,String email,String newpassword){
         SQLiteDatabase MyDB = null;
         boolean isUpdate = false;
@@ -176,5 +208,69 @@ public class DBhelper extends SQLiteOpenHelper {
         }
 
         return isUpdate;
+    }
+
+    public boolean update_username(String email,String newusername){
+        SQLiteDatabase MyDB = null;
+        boolean isUpdate = false;
+
+        try{
+            MyDB = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_NAME,newusername);
+
+            int rowAffected = MyDB.update(TABLE_NAME,contentValues,COLUMN_EMAIL+" = ?",new String[] {email});
+            isUpdate = rowAffected > 0;
+        }catch (Exception e){
+            Log.e("DatabaseHelper","Error while updating the username");
+        }finally {
+            if(MyDB!=null && MyDB.isOpen()){
+                MyDB.close();
+            }
+        }
+
+        return isUpdate;
+    }
+
+    public boolean update_email(String email,String newemail){
+        SQLiteDatabase MyDB = null;
+        boolean isUpdate = false;
+
+        try{
+            MyDB = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_EMAIL,newemail);
+
+            int rowAffected =  MyDB.update(TABLE_NAME,contentValues,COLUMN_EMAIL+" = ?",new String[]{email});
+            isUpdate = rowAffected > 0;
+        }catch(Exception e){
+            Log.e("DBhelper","Error while updating the email address");
+        }finally{
+            if(MyDB!=null && MyDB.isOpen()){
+                MyDB.close();
+            }
+        }
+        return isUpdate;
+    }
+
+    public boolean update_phone_no(String email,String newphone_no){
+        SQLiteDatabase MyDB = null;
+        boolean isUpdated = false;
+
+        try{
+            MyDB = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(COLUMN_PHONE_NO,newphone_no);
+
+            int rowAffected = MyDB.update(TABLE_NAME,contentValues,COLUMN_EMAIL+" = ? ",new String[]{email});
+            isUpdated = rowAffected > 0;
+        }catch(Exception e){
+            Log.e("DBhelper","Error while updating the Phone Number");
+        }finally{
+            if(MyDB!=null && MyDB.isOpen()){
+                MyDB.close();
+            }
+        }
+        return isUpdated;
     }
 }
